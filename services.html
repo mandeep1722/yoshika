@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Gallery</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Birthday Message</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Beautiful pics of my Love</h1>
+            <p></p>
+        </div>
+    </header>
+
+    <!-- Service Gallery Section -->
+    <section class="service-gallery">
+        <div class="container">
+            <h2>Gallery</h2>
+            <div class="image-grid">
+                <div class="image-box">
+                    <img src="7 (1).jpg" alt="Service 1" onclick="openPreview(this)">
+                    
+                </div>
+                <div class="image-box">
+                    <img src="7 (2).jpg" alt="Service 2" onclick="openPreview(this)">
+                    
+                </div>
+                <div class="image-box">
+                    <img src="7 (3).jpg" alt="Service 3" onclick="openPreview(this)">
+                    
+                </div>
+                <div class="image-box">
+                    <img src="7 (4).JPG" alt="Service 4" onclick="openPreview(this)">
+                  
+                </div>
+                <div class="image-box">
+                    <img src="7 (6).JPG" alt="Service 5" onclick="openPreview(this)">
+                    
+                </div>
+                <div class="image-box">
+                    <img src="7 (8).jpg" alt="Service 6" onclick="openPreview(this)">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Image Preview Modal (Reused from index.html) -->
+    <div id="imagePreviewModal" class="modal">
+        <span class="close" onclick="closePreview()">&times;</span>
+        <img class="modal-content" id="previewImage">
+        <div id="caption"></div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Responsive Image Preview Website. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Preview Modal -->
+    <script>
+        function openPreview(img) {
+            // Get the modal and display it
+            var modal = document.getElementById("imagePreviewModal");
+            var modalImg = document.getElementById("previewImage");
+            var captionText = document.getElementById("caption");
+
+            modal.style.display = "block";
+            modalImg.src = img.src;  // Set modal image to the clicked image
+            captionText.innerHTML = img.alt;  // Set caption as image's alt text
+        }
+
+        function closePreview() {
+            var modal = document.getElementById("imagePreviewModal");
+            modal.style.display = "none";  // Close the modal
+        }
+    </script>
+
+</body>
+</html>
